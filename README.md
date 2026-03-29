@@ -14,7 +14,7 @@ Kullanıcı Öncelikli Ağırlıklandırma Sistemi: Tasarım iterasyonları, kul
 
 Gelişmiş Doz ve Parçacık Dağılımı: Proton, elektron, GCR (Galaktik Kozmik Işınlar) ve SPE (Güneş Parçacık Olayları) baskınlık yüzdeleri yüksek hassasiyetle hesaplanarak tüm veri sekmelerinde tutarlı bir şekilde senkronize edilir.
 
-SEE ve Güvenlik Marjı Kalibrasyonu: 4200 km gibi zorlu yörüngelerde karşılaşılan aşırı güvenlik marjı hesaplamaları optimize edilmiş ve SEE (Single Event Effect) riskini hedeflenen seviyeye çekecek katman kalınlık eşikleri sisteme entegre edilmiştir.
+SEE ve Güvenlik Marjı Kalibrasyonu: Zorlu yörüngelerde karşılaşılan aşırı güvenlik marjı hesaplamaları optimize edilmiş ve SEE (Single Event Effect) riskini hedeflenen seviyeye çekecek katman kalınlık eşikleri sisteme entegre edilmiştir.
 
 #📊 Girdi ve Çıktılar
 📥 Kullanıcı Girdileri
