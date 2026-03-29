@@ -45,3 +45,7 @@ LEO (Alçak Dünya Yörüngesi): ~0.5 - 2 g/cm²
 GEO (Yer Senkron Yörünge): ~2 - 5 g/cm²
 
 MEO (Orta Dünya Yörüngesi): ~5 - 10 g/cm²
+
+# Arayüzün Çalıştırılması
+1- İlk önce eğer kurulu değilse bilgisayarınıza Node JS yüklemeniz gerekiyor. (https://nodejs.org/en/download/current linkini kullanabilirsiniz)
+2- 
