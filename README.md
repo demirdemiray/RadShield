@@ -1,16 +1,47 @@
 # RadShield Uydu Radyasyon Kalkan Tasarım Uygulaması
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Bu proje, yörünge mekaniği, güneş fiziği ve malzeme bilimini bir araya getirerek uzay araçları için optimize edilmiş Graded-Z (çok katmanlı) radyasyon kalkanı konfigürasyonları üreten gelişmiş bir simülasyon ve analiz aracıdır.
 
-Currently, two official plugins are available:
+#🚀 Proje Hakkında
+Uzay ortamındaki radyasyon, uydu bileşenlerinin ömrünü belirleyen en kritik faktörlerden biridir. SRSO; fırlatma tarihi, yörünge dinamikleri (inklinasyon, egzantiriklik, apogee, perigee) ve güneş döngüsü (aktif/pasif evreler) gibi çevresel değişkenleri analiz eder. Araç, uydunun hedeflenen görev ömrü boyunca maruz kalacağı toplam radyasyon dozunu hesaplar ve ikincil radyasyon risklerini (Bremsstrahlung) en aza indiren malzeme, kalınlık ve sıralama kombinasyonlarını (LEO, MEO ve GEO için ortalama g/cm² değerlerinde) simüle eder.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+#⚙️ Çekirdek Algoritma ve Son Modifikasyonlar
+Algoritma, yüksek doğruluk ve esneklik sağlamak amacıyla bir dizi gelişmiş optimizasyon barındırır:
 
-## React Compiler
+SPENVIS Tabanlı Makine Öğrenmesi: Yörüngeye özel radyasyon karakteristiği, SPENVIS verileriyle eğitilmiş bir model kullanılarak analiz edilir ve sistemde ön tanımlı 25 farklı Graded-Z şablonuyla eşleştirilir.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Kullanıcı Öncelikli Ağırlıklandırma Sistemi: Tasarım iterasyonları, kullanıcının belirlediği ve toplamı %100 olan 3 ana metriğe göre (Hafiflik, Maliyet, Koruma) dinamik olarak yönlendirilir.
 
-## Expanding the ESLint configuration
+Gelişmiş Doz ve Parçacık Dağılımı: Proton, elektron, GCR (Galaktik Kozmik Işınlar) ve SPE (Güneş Parçacık Olayları) baskınlık yüzdeleri yüksek hassasiyetle hesaplanarak tüm veri sekmelerinde tutarlı bir şekilde senkronize edilir.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+SEE ve Güvenlik Marjı Kalibrasyonu: 4200 km gibi zorlu yörüngelerde karşılaşılan aşırı güvenlik marjı hesaplamaları optimize edilmiş ve SEE (Single Event Effect) riskini hedeflenen seviyeye çekecek katman kalınlık eşikleri sisteme entegre edilmiştir.
+
+#📊 Girdi ve Çıktılar
+📥 Kullanıcı Girdileri
+Görev Parametreleri: Fırlatma tarihi, hedeflenen uydu görev ömrü.
+
+Yörünge Dinamikleri: İnklinasyon, egzantiriklik, apogee ve perigee değerleri.
+
+Tolerans Sınırları: Uydu bileşenlerinin dayanabileceği maksimum radyasyon dozu, izin verilen maksimum zırh kütlesi (g/cm²).
+
+Optimizasyon Tercihleri: Hafiflik, Maliyet ve Koruma yüzdelik ağırlıkları.
+
+#📤 Sistem Çıktıları
+Zırh Konfigürasyonu: Katman sayısı, kullanılacak malzemeler, katmanların dizilim sırası ve spesifik kalınlıkları.
+
+Fiziksel Özellikler: Toplam zırh kütlesi (g/cm² cinsinden) ve tahmini zırh maliyeti.
+
+Radyasyon Analizi: Zırhın proton, elektron ve X-ray radyasyonunu filtreleme yüzdeleri.
+
+Görev Ömrü Tahmini: Ömür boyu uyduya ulaşan net radyasyon dozu ve kalkanın sağlayacağı efektif koruma ömrü.
+
+#🛠️ Tasarım Kriterleri ve Eşik Değerler
+Sistem, sadece radyasyonu durdurmayı değil, aynı zamanda ikincil radyasyon üretimini engellemeyi de hedefler. Örneğin, alüminyum gibi malzemelerin gereğinden kalın kullanılması durumunda ortaya çıkacak X-ray (ikincil radyasyon) riskini hesaplayarak kalınlıkları belirli eşiklerde sınırlar. Güneşin sakin döneminde fırlatılacak kısa ömürlü bir uydu için gereksiz ağır zırh tasarımlarından kaçınır.
+
+#Örnek Zırh Kalınlığı Referansları:
+
+LEO (Alçak Dünya Yörüngesi): ~0.5 - 2 g/cm²
+
+GEO (Yer Senkron Yörünge): ~2 - 5 g/cm²
+
+MEO (Orta Dünya Yörüngesi): ~5 - 10 g/cm²
