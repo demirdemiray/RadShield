@@ -47,5 +47,12 @@ GEO (Yer Senkron Yörünge): ~2 - 5 g/cm²
 MEO (Orta Dünya Yörüngesi): ~5 - 10 g/cm²
 
 # Arayüzün Çalıştırılması
+Dizinler arasında cd komutu ile geçiş yapılabilir. Örnek:
+
 1- İlk önce eğer kurulu değilse bilgisayarınıza Node JS yüklemeniz gerekiyor. (https://nodejs.org/en/download/current linkini kullanabilirsiniz)
-2- 
+2- Terminal'e girilir, öncelikle localhost ID'lerinin boş olduğundan emin olmak için npx kill-port 5173 7474 komutu girilir.
+3- Server açılır (Teerminal'den uygulamanın bulunduğu dizinin altındaki src klasörüne girilir, node .\volkan-server.cjs komutu ile Radyasyon Verileri Lokal Sunucusu açılır.) 
+4- Terminal'e girilir, ilk başlatma öncesinde uygulama dizinine (RadShield-main) ulaşılır ve npm install komutu yazılır.
+5- Uygulama başlatılır. (RadShield-main dizininde iken npm run dev komutu ile uygulama başlatılır.)
+6- Uygulama tarayıcıda açılır. "npm run dev" komutu sonrası gelen mesajların arasındaki Local: http://localhost:5173/ şeklinde yazan bağlantı kopyalanıp tarayıcıda başlatılır.
+
