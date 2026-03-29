@@ -1,0 +1,85 @@
+{
+  "version": "v2",
+  "n_samples": 4205,
+  "model": "SPENVIS AE-8/AP-8 tabanl\u0131 2D (L,E) interpolat\u00f6r",
+  "proton_energies_mev": [
+    0.1,
+    0.15,
+    0.2,
+    0.3,
+    0.5,
+    0.7,
+    1.0,
+    1.5,
+    2.0,
+    3.0,
+    5.0,
+    7.0,
+    10.0,
+    15.0,
+    20.0,
+    30.0,
+    50.0,
+    70.0,
+    100.0,
+    150.0,
+    200.0,
+    300.0,
+    400.0
+  ],
+  "electron_energies_mev": [
+    0.04,
+    0.1,
+    0.2,
+    0.3,
+    0.4,
+    0.5,
+    0.6,
+    0.7,
+    0.8,
+    1.0,
+    1.5,
+    2.0,
+    2.5,
+    3.0,
+    3.5,
+    4.0,
+    4.5,
+    5.0,
+    5.5,
+    6.0,
+    7.0
+  ],
+  "param_ranges": {
+    "altitude_km": [
+      200.0,
+      40000.0
+    ],
+    "inclination_deg": [
+      0.0,
+      98.6
+    ],
+    "eccentricity": [
+      0.0,
+      0.8
+    ],
+    "raan_deg": [
+      0.0,
+      360.0
+    ],
+    "arg_perigee_deg": [
+      0.0,
+      360.0
+    ],
+    "mission_duration_years": [
+      1.0,
+      15.0
+    ],
+    "solar_max_fraction": [
+      0.0,
+      1.0
+    ]
+  },
+  "generated_at": "2026-03-29T02:33:07.138685",
+  "notes": "v1 analitik yakla\u015f\u0131m\u0131 ~10^6 kat hata veriyordu (L bazl\u0131 sabit ak\u0131 atayarak SAA/ku\u015fak d\u0131\u015f\u0131 noktalar\u0131 hesaba katm\u0131yordu). v2, ger\u00e7ek SPENVIS (B,L,flux) nokta bulutundan 2D spline interpolasyonu kullan\u0131r."
+}
